@@ -1,3 +1,14 @@
+# idea
+.idea/*
+.vscode/*
+.cache/*
+
+# opensource and data of postgresql
+opensource/postgresql/**
+opensource/soci/**
+opensource/googletest/**
+data
+
 # Prerequisites
 *.d
 
