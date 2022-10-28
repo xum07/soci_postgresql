@@ -19,4 +19,4 @@ link_directories(${OPEN_SOURCE_DIR}/postgresql/lib
 )
 
 add_subdirectory(src)
-add_subdirectory(third_party)
+add_subdirectory(test)

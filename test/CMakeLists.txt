@@ -1,4 +1,4 @@
 enable_testing()
 
-add_subdirectory(simple)
-add_subdirectory(benchmark)
+add_subdirectory(ut)
+add_subdirectory(st)

@@ -1,5 +1,5 @@
 /*
- * @Description: 
+ * @Description: Connection pool head file
  * @Author: xum07
  * @Date: 2022-10-27
  */
