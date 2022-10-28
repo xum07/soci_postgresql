@@ -3,8 +3,8 @@
  * @Author: xum07
  * @Date: 2022-10-28
  */
-#ifndef TEST_SCHOOL_MEMBER
-#define TEST_SCHOOL_MEMBER
+#ifndef LAYOUT_DB_TEST_SCHOOL_MEMBER
+#define LAYOUT_DB_TEST_SCHOOL_MEMBER
 
 #include <sys/types.h>
 #include <cstring>
@@ -26,4 +26,4 @@ private:
 };
 }
 
-#endif  // TEST_SCHOOL_MEMBER
+#endif  // LAYOUT_DB_TEST_SCHOOL_MEMBER

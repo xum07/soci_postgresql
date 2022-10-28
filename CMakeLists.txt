@@ -14,6 +14,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include
   ${OPEN_SOURCE_DIR}/googletest/include
 )
 link_directories(${OPEN_SOURCE_DIR}/postgresql/lib
+  ${OPEN_SOURCE_DIR}/postgresql/lib
   ${OPEN_SOURCE_DIR}/soci/lib
   ${OPEN_SOURCE_DIR}/googletest/lib
 )

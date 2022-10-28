@@ -3,8 +3,8 @@
  * @Author: xum07
  * @Date: 2022-10-28
  */
-#ifndef TEST_TEACHER
-#define TEST_TEACHER
+#ifndef LAYOUT_DB_TEST_TEACHER
+#define LAYOUT_DB_TEST_TEACHER
 
 #include "SchoolMember.h"
 #include <vector>
@@ -23,4 +23,4 @@ private:
 };
 }
 
-#endif  // TEST_TEACHER
+#endif  // LAYOUT_DB_TEST_TEACHER

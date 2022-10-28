@@ -17,8 +17,9 @@ public:
     T& operator=(const T&) = delete;
     T& operator=(T&&) = delete;
 
-    static void create() {
-        getInstRef() = new T();
+    template<typename... Args>
+    static void create(Args... arg) {
+        getInstRef() = new T(std::forward<Args>(arg)...);
     }
 
     static T* inst() {

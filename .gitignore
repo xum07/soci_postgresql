@@ -3,11 +3,12 @@
 .vscode/*
 .cache/*
 
-# opensource and data of postgresql
+# careless folders
 opensource/postgresql/**
 opensource/soci/**
 opensource/googletest/**
 data
+build
 
 # Prerequisites
 *.d

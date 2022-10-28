@@ -31,8 +31,3 @@ Follow the above guide, the compilation of SOCI with PostgreSQL
 3. Finally, execute `make && make install`
 
 > A deeper introduction about SOCI please see [SOCI_guide](./doc/SOCI_guide.md)
-
-# Test conent
-Please compile in `test` folder independently if you want to test.
-1. A basic functional test is in `test/simple`
-2. A performance test is in `test/benchmark`. Add extra option `-DTest_perform` in cmake command during compilation if you want to try.

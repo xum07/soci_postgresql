@@ -3,8 +3,8 @@
  * @Author: xum07
  * @Date: 2022-10-28
  */
-#ifndef TEST_STUDENT
-#define TEST_STUDENT
+#ifndef LAYOUT_DB_TEST_STUDENT
+#define LAYOUT_DB_TEST_STUDENT
 
 #include "SchoolMember.h"
 
@@ -22,4 +22,4 @@ private:
 };
 }
 
-#endif  // TEST_STUDENT
+#endif  // LAYOUT_DB_TEST_STUDENT

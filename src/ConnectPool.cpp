@@ -4,13 +4,13 @@
  * @Date: 2022-10-27
  */
 #include "ConnectPool.h"
+#include <soci/session.h>
 
 using namespace LayoutDB;
 
-ConnectPool::ConnectPool()
+ConnectPool::ConnectPool(std::size_t poolSize)
 {
-    constexpr std::size_t POOL_SIZE = 16;
-    sociPool_ = std::make_unique<soci::connection_pool>(POOL_SIZE);
+    sociPool_ = std::make_unique<soci::connection_pool>(poolSize);
 }
 
 Connect ConnectPool::borrow(int timeout)
@@ -21,7 +21,7 @@ Connect ConnectPool::borrow(int timeout)
         return {};
     }
 
-    return { sociPool_->at(index), index };
+    return { &(sociPool_->at(index)), index };
 }
 
 void ConnectPool::returnBack(Connect& connect)
@@ -30,5 +30,5 @@ void ConnectPool::returnBack(Connect& connect)
         connect.sess_->close();
     }
 
-    sociPool_->give_back(const_cast<std::size_t>(connect.pos_));
+    sociPool_->give_back(connect.pos_);
 }
