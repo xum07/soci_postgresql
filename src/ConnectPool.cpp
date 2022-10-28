@@ -26,5 +26,9 @@ Connect ConnectPool::borrow(int timeout)
 
 void ConnectPool::returnBack(Connect& connect)
 {
+    if (connect.sess_->is_connected()) {
+        connect.sess_->close();
+    }
+
     sociPool_->give_back(const_cast<std::size_t>(connect.pos_));
 }
