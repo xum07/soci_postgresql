@@ -30,6 +30,8 @@ Follow the above guide, the compilation of SOCI with PostgreSQL
 2. execute cmake command `mkdir build && cd build && cmake ../ -G "Unix Makefiles" -DWITH_BOOST=ON -DCMAKE_INSTALL_PREFIX={install path} -DWITH_POSTGRESQL=ON` under root path of project SOCI
 3. Finally, execute `make && make install`
 
+> A deeper introduction about SOCI please see [SOCI_guide](./doc/SOCI_guide.md)
+
 # Test conent
 Please compile in `test` folder independently if you want to test.
 1. A basic functional test is in `test/simple`
