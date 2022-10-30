@@ -13,15 +13,15 @@ ConnectPool::ConnectPool(std::size_t poolSize)
     sociPool_ = std::make_unique<soci::connection_pool>(poolSize);
 }
 
-Connect ConnectPool::borrow(int timeout)
+std::optional<Connect> ConnectPool::borrow(int timeout)
 {
     std::size_t index = 0;
     auto ret = sociPool_->try_lease(index, timeout);
     if (!ret) {
-        return {};
+        return std::nullopt_t;
     }
 
-    return { &(sociPool_->at(index)), index };
+    return Connect(&(sociPool_->at(index)), index);
 }
 
 void ConnectPool::returnBack(Connect& connect)

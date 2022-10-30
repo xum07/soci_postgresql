@@ -3,8 +3,10 @@
  * @Author: xum07
  * @Date: 2022-10-30
  */
-#ifndef LAYOUT_DB_PG_DATABASE
-#define LAYOUT_DB_PG_DATABASE
+#ifndef LAYOUT_DB_PG_ADAPT_DATABASE
+#define LAYOUT_DB_PG_ADAPT_DATABASE
+
+#include <string_view>
 
 namespace LayoutDB {
 
@@ -13,10 +15,10 @@ public:
     DatabaseManager() = default;
     virtual ~DatabaseManager() = default;
 
-    bool create(std::string_view name);
-    bool drop(std::string_view name);
+    static bool create(std::string_view name);
+    static bool drop(std::string_view name);
 };
 
 }  // namespace LayoutDB
 
-#endif  // LAYOUT_DB_PG_DATABASE
+#endif  // LAYOUT_DB_PG_ADAPT_DATABASE

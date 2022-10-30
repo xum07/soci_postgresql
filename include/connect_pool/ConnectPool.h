@@ -8,11 +8,23 @@
 
 #include <soci/connection-pool.h>
 #include <memory>
+#include <optional>
 #include "util/Singleton.h"
 
 namespace LayoutDB {
-struct Connect {
-   soci::session* sess_ {nullptr};
+
+using session = soci::session;
+
+class Connect {
+public:
+    explicit Connect(session* sess, const std::size_t pos) : sess_(sess), pos_(pos) {}
+
+    session* getSession() {
+        return sess_;
+    }
+
+private:
+   session* sess_ {nullptr};
    const std::size_t pos_ {0};  // internal member of soci::connect_pool, don't change and don't care
 };
 
@@ -21,7 +33,7 @@ public:
     explicit ConnectPool(std::size_t poolSize);
     ~ConnectPool() override = default;
 
-    Connect borrow(int timeout = -1);
+    std::optional<Connect> borrow(int timeout = -1);
     void returnBack(Connect& connect);
 
 private:
