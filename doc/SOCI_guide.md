@@ -8,8 +8,8 @@ The head file is `connection-pool.h` and its basic class likes below:
 
 ### Borrow from the connection pool
 To borrow a session from the connection pool, there are two ways:
-1. call `std::size_t lease()` to get a possible session until success
-2. call `bool try_lease(std::size_t & pos, int timeout)` to get a certain session with timeout, 
+1. call `std::size_t lease()` to get a session until success
+2. call `bool try_lease(std::size_t & pos, int timeout)` to get a session with timeout, 
 
 After get the index of session from `connection_pool_impl::sessions_`, the `session & at(std::size_t pos)` function must be called to get the session.
 
