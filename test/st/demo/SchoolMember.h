@@ -2,6 +2,7 @@
  * @Description: Member of school
  * @Author: xum07
  * @Date: 2022-10-28
+ * @UpdateData: 2022-10-31
  */
 #ifndef LAYOUT_DB_TEST_SCHOOL_MEMBER
 #define LAYOUT_DB_TEST_SCHOOL_MEMBER
@@ -9,7 +10,7 @@
 #include <sys/types.h>
 #include <cstring>
 
-namespace TEST {
+namespace LayoutDBTest {
 class SchoolMem {
 public:
     SchoolMem() = default;

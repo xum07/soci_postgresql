@@ -2,9 +2,10 @@
  * @Description: A simple thread-safty log print
  * @Author: xum07
  * @Date: 2022-10-29
+ * @UpdateData: 2022-10-29
  */
-#ifndef UTIL_LOG
-#define UTIL_LOG
+#ifndef LAYOUT_DB_UTIL_LOG
+#define LAYOUT_DB_UTIL_LOG
 
 #include <iostream>
 #include <mutex>
@@ -33,4 +34,4 @@ private:
     std::lock_guard<std::mutex> lock_;
 };
 
-#endif  // UTIL_LOG
+#endif  // LAYOUT_DB_UTIL_LOG

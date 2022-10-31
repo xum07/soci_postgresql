@@ -1,13 +1,14 @@
 /*
- * @Description: The test class of ConnectPool
+ * @Description: Test cases of ConnectPool
  * @Author: xum07
  * @Date: 2022-10-28
+ * @UpdateData: 2022-10-31
  */
 #include "connect_pool/ConnectPool.h"
 #include <gtest/gtest.h>
 #include <thread>
 #include <chrono>
-#include "util/Log.h"
+#include "common/util/Log.h"
 
 using namespace LayoutDB;
 using namespace std::chrono_literals;

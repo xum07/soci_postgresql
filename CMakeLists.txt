@@ -9,6 +9,7 @@ add_compile_options(-Wall -fstack-protector -Wl,-z,noexecstack)
 
 set(OPEN_SOURCE_DIR ${PROJECT_SOURCE_DIR}/opensource)
 include_directories(${PROJECT_SOURCE_DIR}/include
+  ${PROJECT_SOURCE_DIR}/src
   ${OPEN_SOURCE_DIR}/postgresql/include
   ${OPEN_SOURCE_DIR}/soci/include
   ${OPEN_SOURCE_DIR}/googletest/include

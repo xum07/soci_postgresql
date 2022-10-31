@@ -2,9 +2,10 @@
  * @Description: Template about singleton class
  * @Author: xum07
  * @Date: 2022-10-28
+ * @UpdateData: 2022-10-28
  */
-#ifndef UTIL_SINGLETON
-#define UTIL_SINGLETON
+#ifndef LAYOUT_DB_UTIL_SINGLETON
+#define LAYOUT_DB_UTIL_SINGLETON
 
 /**
  * @brief Singleton class whose life cycle is controlable
@@ -65,4 +66,4 @@ protected:
     virtual ~SSingleton() = default;
 };
 
-#endif  // UTIL_SINGLETON
+#endif  // LAYOUT_DB_UTIL_SINGLETON

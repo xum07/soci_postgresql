@@ -2,8 +2,9 @@
  * @Description: A simple thread-safty log print
  * @Author: xum07
  * @Date: 2022-10-29
+ * @UpdateData: 2022-10-29
  */
-#include "util/Log.h"
+#include "Log.h"
 
 static std::mutex g_mutex;
 

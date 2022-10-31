@@ -2,14 +2,14 @@
  * @Description: Manage database space in PostgreSQL
  * @Author: xum07
  * @Date: 2022-10-30
+ * @UpdateData: 2022-10-30
  */
 #ifndef LAYOUT_DB_PG_ADAPT_DATABASE
 #define LAYOUT_DB_PG_ADAPT_DATABASE
 
 #include <string_view>
 
-namespace LayoutDB {
-
+namespace LayoutDB_PG {
 class DatabaseManager {
 public:
     DatabaseManager() = default;

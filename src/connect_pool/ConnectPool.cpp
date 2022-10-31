@@ -2,6 +2,7 @@
  * @Description: The implement of connection pool
  * @Author: xum07
  * @Date: 2022-10-27
+ * @UpdateData: 2022-10-27
  */
 #include "connect_pool/ConnectPool.h"
 #include <soci/session.h>

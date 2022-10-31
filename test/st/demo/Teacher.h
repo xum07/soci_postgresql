@@ -2,6 +2,7 @@
  * @Description: Teacher in the school
  * @Author: xum07
  * @Date: 2022-10-28
+ * @UpdateData: 2022-10-31
  */
 #ifndef LAYOUT_DB_TEST_TEACHER
 #define LAYOUT_DB_TEST_TEACHER
@@ -9,7 +10,7 @@
 #include "SchoolMember.h"
 #include <vector>
 
-namespace TEST {
+namespace LayoutDBTest {
 class Teacher : public SchoolMem {
 public:
     Teacher() = default;

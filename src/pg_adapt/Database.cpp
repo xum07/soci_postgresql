@@ -2,11 +2,14 @@
  * @Description: Manage database space in PostgreSQL
  * @Author: xum07
  * @Date: 2022-10-30
+ * @UpdateData: 2022-10-30
  */
-#include "database.h"
+#include "Database.h"
+#include <soci/session.h>
 #include "connect_pool/ConnectPool.h"
-#include "util/Log.h"
+#include "common/util/Log.h"
 
+using namespace LayoutDB_PG;
 using namespace LayoutDB;
 
 bool DatabaseManager::create(std::string_view name)
