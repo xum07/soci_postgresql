@@ -17,14 +17,16 @@ namespace {
 static void usePool(const std::chrono::seconds& sec, int timeout) {
     auto id = std::this_thread::get_id();
     auto conn = Singleton<ConnectPool>::inst()->borrow(timeout);
-    if (!conn.has_value()) {
+    if (timeout == -1) {
+        EXPECT_NE(conn.sess_, nullptr);
+    } else if (conn.sess_ == nullptr) {
         Log() << "thread [" << id << "] fail to borrow" << std::endl;
         return;
     }
 
     Log() << "thread[" << id << "] borrow a session" << std::endl;
     std::this_thread::sleep_for(sec);
-    Singleton<ConnectPool>::inst()->returnBack(conn.value());
+    Singleton<ConnectPool>::inst()->returnBack(conn);
     Log() << "thread[" << id << "] release a session" << std::endl;
 }
 }

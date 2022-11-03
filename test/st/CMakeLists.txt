@@ -1,12 +1,14 @@
 set(st_name st_test)
 
-aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} SRC_FILES)
+file(GLOB SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/demo/*.cpp)
 add_executable(${st_name} ${SRC_FILES})
 target_link_libraries(${st_name} PRIVATE
   gtest
   gtest_main
   pthread
   connect_pool
+  soci_postgresql
+  pq
 )
 
 enable_testing()
