@@ -6,7 +6,7 @@ PostgreSQL and SOCI are both added as git submodules in this project. And the bi
 ## PostgreSQL compilaion
 1. Execute `./configure --prefix={install path} CFLAGS="-O2" --without-readline` if you want to get a release version with better performance. Besides, [bison](https://ftp.gnu.org/gnu/bison/) and [flex](https://github.com/westes/flex) are neccessary dependent libraries. At the same time, [readline](https://ftp.gnu.org/gnu/readline/)(do not install if you do not need to type sql by word) and [zlib](https://zlib.net/) are recommanded to install.
 2. After that, execute `make & make install` to install executable binary file and libraries to `{install path}`
-3. Add `LD_LIBRARY_PATH` and `PATH` before executing `pg_ctl` to help library search. Finally, type `pg_ctl -D {database files path} -l {log file path} start` to run PostgreSQL.
+3. Add `LD_LIBRARY_PATH` and `PATH` before executing `initdb` and `pg_ctl` to help library search. Finally, type `pg_ctl -D {database files path} -l {log file path} start` to run PostgreSQL.
 
 ## SOCI compilation
 Below is the guide in `cmake/modules/FindPostgreSQL.cmake` in SOCI project. Do not follow [the official documents about compilation](https://soci.sourceforge.net/doc/master/installation/) for some important details missing, just read the cmake project since it's very simple
@@ -26,8 +26,8 @@ Below is the guide in `cmake/modules/FindPostgreSQL.cmake` in SOCI project. Do n
 ```
 
 Follow the above guide, the compilation of SOCI with PostgreSQL
-1. use `export` command to set `CMAKE_INCLUDE_PATH` and `CMAKE_LIBRARY_PATH` both, or `POSTGRESQL_ROOT`
-2. execute cmake command `mkdir build && cd build && cmake ../ -G "Unix Makefiles" -DWITH_BOOST=ON -DCMAKE_INSTALL_PREFIX={install path} -DWITH_POSTGRESQL=ON` under root path of project SOCI
+1. use `export` command to set `CMAKE_INCLUDE_PATH` and `CMAKE_LIBRARY_PATH` both, or `POSTGRESQL_ROOT`, or directly set them in cmake options.
+2. execute cmake command `mkdir build && cd build && cmake ../ -G "Unix Makefiles" -DWITH_BOOST=ON -DCMAKE_INSTALL_PREFIX={install path} -DWITH_POSTGRESQL=ON -DCMAKE_INCLUDE_PATH={postgresql_include} -DCMAKE_LIBRARY_PATH={postgresql_library}` under root path of project SOCI
 3. Finally, execute `make && make install`
 
 > A deeper introduction about SOCI please see [SOCI_guide](./doc/SOCI_guide.md)
